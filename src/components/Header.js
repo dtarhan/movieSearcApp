@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const filterMovies = () => {
+  const movies = () => {
 
     api
       .get(
@@ -19,7 +19,7 @@ const Header = () => {
       )
       .then((res) => {
         dispatch({
-          type: actionTypes.filmActions.GET_FILTRED_FILMS_SUCCESS,
+          type: actionTypes.filmActions.GET_FILMS_SUCCESS,
           payload: res.data.results,
         });
 
@@ -63,13 +63,13 @@ const Header = () => {
             onChange={(event) => setSearchText(event.target.value)}
           />
           <div className="d-flex ms-3 ">
-            <button  className="btn btn-lg btn-secondary ms-3" onClick={() => filterMovies()}>Search</button>
+            <button  className="btn btn-lg btn-secondary ms-3" onClick={() => movies()}>Search</button>
             <button className="btn btn-lg btn-danger ms-3 me-3" onClick={logOut}>Log Out</button>
           </div>
 
         </div>
       </nav>
-      {/* filtre */}
+     
 
     </header>
   );

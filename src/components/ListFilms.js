@@ -38,7 +38,7 @@ const ListFilms = () => {
           </tr>
         </thead>
         <tbody>
-          {filmsState?.filtredMovies?.map((film, index) => {
+          {filmsState?.movies?.map((film, index) => {
             return (
               <tr key={index}>
                 <th scope="row">{index + 1}</th>
